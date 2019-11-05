@@ -29,7 +29,7 @@ class Encoder
      */
     public function jsonEncode($data)
     {
-        $json = json_encode($data);
+        $json = json_encode($data, JSON_UNESCAPED_SLASHES);
 
         if (json_last_error() != JSON_ERROR_NONE) {
             throw new RuntimeException('Error while encoding to JSON: ' . json_last_error_msg());
